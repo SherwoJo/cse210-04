@@ -41,7 +41,7 @@ namespace Unit04
 
             // create the banner
             Actor banner = new Actor();
-            banner.SetText("");
+            banner.SetText("Score: 0");
             banner.SetFontSize(FONT_SIZE);
             banner.SetColor(WHITE);
             banner.SetPosition(new Point(CELL_SIZE, 0));
@@ -55,40 +55,37 @@ namespace Unit04
             robot.SetPosition(new Point(MAX_X / 2, MAX_Y - CELL_SIZE));
             cast.AddActor("robot", robot);
 
-            // create the artifacts
+            // create the first artifact
             Random random = new Random();
-            for (int i = 0; i < DEFAULT_ARTIFACTS; i++)
+            int type = random.Next(0, 2);
+            string text = "";
+            if (type == 0)
             {
-                int type = random.Next(0, 2);
-                string text = "";
-                if (type == 0)
-                {
-                    text = ((char)SQUARE_CHAR).ToString();
-                }
-                else if (type == 1)
-                {
-                    text = ((char)ASTERIX_CHAR).ToString();
-                }
-                
-
-                int x = random.Next(1, COLS);
-                int y = 0;
-                Point position = new Point(x, y);
-                position = position.Scale(CELL_SIZE);
-
-                int r = random.Next(0, 256);
-                int g = random.Next(0, 256);
-                int b = random.Next(0, 256);
-                Color color = new Color(r, g, b);
-
-                Artifact artifact = new Artifact();
-                artifact.SetText(text);
-                artifact.SetFontSize(FONT_SIZE);
-                artifact.SetColor(color);
-                artifact.SetPosition(position);
-                artifact.Type = type;
-                cast.AddActor("artifacts", artifact);
+                text = ((char)SQUARE_CHAR).ToString();
             }
+            else if (type == 1)
+            {
+                text = ((char)ASTERIX_CHAR).ToString();
+            }
+            
+
+            int x = random.Next(1, COLS);
+            int y = 0;
+            Point position = new Point(x, y);
+            position = position.Scale(CELL_SIZE);
+
+            int r = random.Next(0, 256);
+            int g = random.Next(0, 256);
+            int b = random.Next(0, 256);
+            Color color = new Color(r, g, b);
+
+            Artifact artifact = new Artifact();
+            artifact.SetText(text);
+            artifact.SetFontSize(FONT_SIZE);
+            artifact.SetColor(color);
+            artifact.SetPosition(position);
+            artifact.Type = type;
+            cast.AddActor("artifacts", artifact);
 
             // start the game
             KeyboardService keyboardService = new KeyboardService(CELL_SIZE);
