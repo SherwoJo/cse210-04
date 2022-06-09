@@ -8,31 +8,21 @@ namespace Unit04.Game.Casting
     /// </summary>
     public class Artifact : Actor
     {
-        private string message = "";
+        public int Type { get; set; }
 
-        /// <summary>
-        /// Constructs a new instance of an Artifact.
-        /// </summary>
-        public Artifact()
+        public int GetScore()
         {
-        }
+            int score = 0;
+            if (Type == 0)
+            {
+                score = -1; 
+            }
+            else if (Type == 1)
+            {
+                score = 1;
+            }
 
-        /// <summary>
-        /// Gets the artifact's message.
-        /// </summary>
-        /// <returns>The message.</returns>
-        public string GetMessage()
-        {
-            return message;
-        }
-
-        /// <summary>
-        /// Sets the artifact's message to the given value.
-        /// </summary>
-        /// <param name="message">The given message.</param>
-        public void SetMessage(string message)
-        {
-            this.message = message;
+            return score;
         }
     }
 }

@@ -22,9 +22,12 @@ namespace Unit04
         private static int COLS = 60;
         private static int ROWS = 40;
         private static string CAPTION = "Greed";
-        private static string DATA_PATH = "Data/messages.txt";
         private static Color WHITE = new Color(255, 255, 255);
         private static int DEFAULT_ARTIFACTS = 40;
+        private static int ASTERIX_CHAR = 42;
+        private static int SQUARE_CHAR = 219;
+
+
 
 
         /// <summary>
@@ -52,15 +55,21 @@ namespace Unit04
             robot.SetPosition(new Point(MAX_X / 2, MAX_Y - CELL_SIZE));
             cast.AddActor("robot", robot);
 
-            // // load the messages
-            List<string> messages = File.ReadAllLines(DATA_PATH).ToList<string>();
-
             // create the artifacts
             Random random = new Random();
             for (int i = 0; i < DEFAULT_ARTIFACTS; i++)
             {
-                string text = ((char)random.Next(33, 126)).ToString();
-                string message = messages[i];
+                int type = random.Next(0, 2);
+                string text = "";
+                if (type == 0)
+                {
+                    text = ((char)SQUARE_CHAR).ToString();
+                }
+                else if (type == 1)
+                {
+                    text = ((char)ASTERIX_CHAR).ToString();
+                }
+                
 
                 int x = random.Next(1, COLS);
                 int y = 0;
@@ -77,7 +86,7 @@ namespace Unit04
                 artifact.SetFontSize(FONT_SIZE);
                 artifact.SetColor(color);
                 artifact.SetPosition(position);
-                artifact.SetMessage(message);
+                artifact.Type = type;
                 cast.AddActor("artifacts", artifact);
             }
 
