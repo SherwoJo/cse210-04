@@ -40,18 +40,18 @@ namespace Unit04
 
             // create the banner
             Actor banner = new Actor();
-            banner.SetText("Score: 0");
-            banner.SetFontSize(FONT_SIZE);
-            banner.SetColor(WHITE);
-            banner.SetPosition(new Point(CELL_SIZE, 0));
+            banner.Text = "Score: 0";
+            banner.FontSize = FONT_SIZE;
+            banner.Color = WHITE;
+            banner.Position = new Point(CELL_SIZE, 0);
             cast.AddActor("banner", banner);
 
             // create the robot
             Actor robot = new Actor();
-            robot.SetText("#");
-            robot.SetFontSize(FONT_SIZE);
-            robot.SetColor(WHITE);
-            robot.SetPosition(new Point(MAX_X / 2, MAX_Y - CELL_SIZE));
+            robot.Text = "#";
+            robot.FontSize = FONT_SIZE;
+            robot.Color = WHITE;
+            robot.Position = new Point(MAX_X / 2, MAX_Y - CELL_SIZE);
             cast.AddActor("robot", robot);
 
             // create the first artifact
@@ -79,10 +79,10 @@ namespace Unit04
             Color color = new Color(r, g, b);
 
             Artifact artifact = new Artifact();
-            artifact.SetText(text);
-            artifact.SetFontSize(FONT_SIZE);
-            artifact.SetColor(color);
-            artifact.SetPosition(position);
+            artifact.Text = text;
+            artifact.FontSize = FONT_SIZE;
+            artifact.Color = color;
+            artifact.Position = position;
             artifact.Type = type;
             cast.AddActor("artifacts", artifact);
 
