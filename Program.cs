@@ -23,7 +23,6 @@ namespace Unit04
         private static int ROWS = 40;
         private static string CAPTION = "Greed";
         private static Color WHITE = new Color(255, 255, 255);
-        private static int DEFAULT_ARTIFACTS = 40;
         private static int ASTERIX_CHAR = 42;
         private static int SQUARE_CHAR = 219;
 
