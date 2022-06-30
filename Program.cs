@@ -17,14 +17,14 @@ namespace Unit04
         private static int FRAME_RATE = 12;
         private static int MAX_X = 900;
         private static int MAX_Y = 600;
-        private static int CELL_SIZE = 15;
-        private static int FONT_SIZE = 15;
-        private static int COLS = 60;
+        public static int CELL_SIZE = 15;
+        public static int FONT_SIZE = 15;
+        public static int COLS = 60;
         private static int ROWS = 40;
         private static string CAPTION = "Greed";
         private static Color WHITE = new Color(255, 255, 255);
-        private static int ASTERIX_CHAR = 42;
-        private static int SQUARE_CHAR = 219;
+        public static int ASTERIX_CHAR = 42;
+        public static int SQUARE_CHAR = 219;
 
 
 
@@ -43,6 +43,7 @@ namespace Unit04
             banner.Text = "Score: 0";
             banner.FontSize = FONT_SIZE;
             banner.Color = WHITE;
+            //banner.Position = new Point(MAX_X / 2, MAX_Y / 2);
             banner.Position = new Point(CELL_SIZE, 0);
             cast.AddActor("banner", banner);
 
@@ -73,6 +74,8 @@ namespace Unit04
             Point position = new Point(x, y);
             position = position.Scale(CELL_SIZE);
 
+            Point velocity = new Point(0, CELL_SIZE);
+
             int r = random.Next(0, 256);
             int g = random.Next(0, 256);
             int b = random.Next(0, 256);
@@ -83,6 +86,7 @@ namespace Unit04
             artifact.FontSize = FONT_SIZE;
             artifact.Color = color;
             artifact.Position = position;
+            artifact.Velocity = velocity;
             artifact.Type = type;
             cast.AddActor("artifacts", artifact);
 
