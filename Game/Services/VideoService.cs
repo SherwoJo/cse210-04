@@ -160,10 +160,10 @@ namespace Unit04.Game.Services
         /// <returns>A Raylib color.</returns>
         private Raylib_cs.Color ToRaylibColor(Casting.Color color)
         {
-            int r = color.GetRed();
-            int g = color.GetGreen();
-            int b = color.GetBlue();
-            int a = color.GetAlpha();
+            int r = color.Red;
+            int g = color.Green;
+            int b = color.Blue;
+            int a = color.Alpha;
             return new Raylib_cs.Color(r, g, b, a);
         }
 
