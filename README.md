@@ -1,9 +1,5 @@
-# Robot Finds Kitten
-Simon Carless once described robotfindskitten as "less a game and more a way of 
-life ... It's fun to wander around until you find a kitten, at which point you feel 
-happy and can start again". I don't think I could have said it better myself!
+# Greed
 
----
 ## Getting Started
 Make sure you have dotnet 6.0 or newer installed on your machine. Open 
 a terminal and browse to the project's root folder. Start the program 
@@ -33,5 +29,4 @@ root                    (project root folder)
 * raylib-cs 3.7.0.1
 
 ## Authors
-* Matt Manley (manleym@byui.edu)
-* Scott Burton (burtons@byui.edu)
+* Jordan Sherwood
